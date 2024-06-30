@@ -16,8 +16,8 @@ public:
 	T& operator*();
 	const T& operator*() const;
 	
-	T& operator->();
-	const T& operator->() const;
+	T* operator->();
+	const T* operator->() const;
 
 	~UniquePointer();
 };
@@ -57,15 +57,15 @@ const T& UniquePointer<T>::operator*() const
 }
 
 template <typename T>
-T& UniquePointer<T>::operator->()
+T* UniquePointer<T>::operator->()
 {
-	return *ptr;
+	return ptr;
 }
 
 template <typename T>
-const T& UniquePointer<T>::operator->() const
+const T* UniquePointer<T>::operator->() const
 {
-	return *ptr;
+	return ptr;
 }
 
 template <typename T>
